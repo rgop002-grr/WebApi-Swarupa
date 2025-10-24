@@ -1,0 +1,6 @@
+@WebApi_Swarupa_HostAddress = http://localhost:5074
+
+GET {{WebApi_Swarupa_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
