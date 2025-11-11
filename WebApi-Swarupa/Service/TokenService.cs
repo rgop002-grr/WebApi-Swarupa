@@ -3,13 +3,13 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 
-namespace WebApi_Swarupa.Models
+namespace WebApi_Swarupa.Service
 {
-    public class Tokenservice
+    public class TokenService
     {
         private readonly IConfiguration _configuration;
 
-        public Tokenservice(IConfiguration config)
+        public TokenService(IConfiguration config)
         {
             _configuration = config;
         }

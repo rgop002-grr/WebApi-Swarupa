@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using WebApi_Swarupa.Models;
+using WebApi_Swarupa.Service;
 
 namespace WebApi_Swarupa.Controllers
 {
@@ -8,8 +9,8 @@ namespace WebApi_Swarupa.Controllers
     [ApiController]
     public class AuthController : ControllerBase
     {
-        private readonly Tokenservice _tokenService;
-        public AuthController(Tokenservice tokenService)
+        private readonly TokenService _tokenService;
+        public AuthController(TokenService tokenService)
         {
             _tokenService = tokenService;
         }
