@@ -6,10 +6,10 @@ namespace WebApi_Swarupa.Service
 {
     public class StudentService : IStudentService
     {
-        private readonly IStudent _studentRepository;
-        public StudentService(IStudent context)
+        private readonly IStudentRepository _studentRepository;
+        public StudentService(IStudentRepository studentRepository)
         {
-            _studentRepository = context;
+            _studentRepository = studentRepository;
         }
 
         public Task<List<Student>> GetAllStudent()
