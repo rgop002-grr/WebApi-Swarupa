@@ -2,7 +2,7 @@
 
 namespace WebApi_Swarupa.Repository
 {
-    public interface IStudent
+    public interface IStudentRepository
     {
         Task<List<Student>> GetAllAsync();
         Task<Student> GetByIdAsync(int id);

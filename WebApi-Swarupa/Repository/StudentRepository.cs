@@ -3,7 +3,7 @@ using WebApi_Swarupa.Models;
 
 namespace WebApi_Swarupa.Repository
 {
-    public class StudentRepository : IStudent
+    public class StudentRepository : IStudentRepository
     {
         private readonly StudentDbContext _context;
         public StudentRepository(StudentDbContext context)
