@@ -1,4 +1,6 @@
+using Microsoft.EntityFrameworkCore;
 using WebApi_Swarupa.Models;
+using WebApi_Swarupa.Repository;
 using WebApi_Swarupa.Service;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -9,6 +11,12 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+
+builder.Services.AddDbContext<StudentDbContext>(options =>
+    options.UseSqlServer(connectionString));
+builder.Services.AddScoped<IStudent, StudentRepository>();
+builder.Services.AddScoped<IStudentService, StudentService>();
 builder.Services.AddScoped<TokenService>();
 
 var app = builder.Build();
